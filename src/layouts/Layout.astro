@@ -1,22 +1,136 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Portfolio of Javier Jiménez - Data Scientist & NLP Engineer specialized in GenAI, Large Language Models, and Natural Language Processing" } = Astro.props;
+import '../styles/global.css';
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Javier Jiménez" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://javier-jimenez99.github.io" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="font-sans bg-slate-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 		<slot />
+		
+		<script>
+			// Dark mode toggle functionality
+			const darkModeToggle = document.querySelector('#dark-mode-toggle');
+			const html = document.documentElement;
+
+			const isDarkMode = localStorage.theme === 'dark' || 
+				(!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+			if (isDarkMode) {
+				html.classList.add('dark');
+			}
+
+			darkModeToggle?.addEventListener('click', () => {
+				html.classList.toggle('dark');
+				localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+			});
+
+			// Smooth scrolling for navigation links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+
+			// Intersection Observer for animations
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -100px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('animate-fade-in-up');
+					}
+				});
+			}, observerOptions);
+
+			// Observe all sections
+			document.querySelectorAll('section').forEach(section => {
+				observer.observe(section);
+			});
+		</script>
+
+		<style>
+			html {
+				font-family: 'Inter', system-ui, sans-serif;
+				scroll-behavior: smooth;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.animate-fade-in-up {
+				animation: fadeInUp 0.8s ease-out forwards;
+			}
+
+			@keyframes float {
+				0%, 100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+			}
+
+			.animate-float {
+				animation: float 3s ease-in-out infinite;
+			}
+
+			@keyframes pulse-glow {
+				0%, 100% {
+					box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+				}
+				50% {
+					box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+				}
+			}
+
+			.animate-pulse-glow {
+				animation: pulse-glow 2s ease-in-out infinite;
+			}
+		</style>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

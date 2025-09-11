@@ -1,0 +1,153 @@
+---
+const projects = [
+  {
+    id: 1,
+    title: "JokerNet",
+    description: "Advanced AI gaming automation system exploring the intersection of artificial intelligence and gaming through automated gameplay mechanics.",
+    image: "🎮",
+    technologies: ["Python", "AI", "Computer Vision", "Game Automation"],
+    highlights: [
+      "AI-driven gaming automation",
+      "Computer vision integration",
+      "Real-time decision making",
+      "Gaming AI exploration"
+    ],
+    github: "https://github.com/Javier-Jimenez99/JokerNet",
+    demo: null,
+  },
+  {
+    id: 2,
+    title: "OwlBear LLM Chat",
+    description: "AI-powered Game Master system for tabletop RPGs. Finalist project in the Gradio MCP Hackathon, featuring advanced conversational AI.",
+    image: "🎲",
+    technologies: ["Python", "LLM", "Multi-agents", "MCP", "Gradio"],
+    highlights: [
+      "Finalist in Gradio MCP Hackathon",
+      "AI Game Master capabilities",
+      "Multi-agent architecture",
+      "Natural language storytelling"
+    ],
+    github: "https://github.com/Agamador/OwlBear-llm-chat",
+    demo: "https://huggingface.co/spaces/Agents-MCP-Hackathon/LLM-GameMaster-Agent",
+  },
+  {
+    id: 3,
+    title: "Gatherer Sage",
+    description: "LLM assistant specialized in Magic: The Gathering, providing rules assistance, card analysis, and game strategy insights through fine-tuned models.",
+    image: "🃏",
+    technologies: ["Python", "LLMs", "Fine-tuning", "NLP", "Streamlit"],
+    highlights: [
+      "Domain-specific LLM fine-tuning",
+      "MTG rules and strategy expertise",
+      "Interactive card analysis",
+      "Gaming knowledge AI"
+    ],
+    github: "https://github.com/Javier-Jimenez99/gatherer-sage",
+    demo: null,
+  },
+  {
+    id: 4,
+    title: "Animdle",
+    description: "Wordle-style anime guessing game featuring opening and ending video clips. A fun web application combining gaming with anime culture.",
+    image: "🎌",
+    technologies: ["JavaScript", "Web Development", "Game Design", "Frontend"],
+    highlights: [
+      "Interactive anime guessing game",
+      "Video clip integration",
+      "Wordle-inspired mechanics",
+      "Anime culture celebration"
+    ],
+    github: null,
+    demo: "https://animdle.com",
+  }
+];
+---
+
+<section id="projects" class="py-20 bg-slate-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Side Projects
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+        Personal projects combining AI, gaming, and web development - exploring the intersection of technology and entertainment
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => (
+        <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 dark:border-gray-700">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div class="text-4xl group-hover:scale-110 transition-transform duration-300">
+                  {project.image}
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+              {project.description}
+            </p>
+            
+            <div class="mb-4">
+              <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
+              <ul class="space-y-1 text-left">
+                {project.highlights.map((highlight) => (
+                  <li class="flex items-start space-x-2">
+                    <span class="text-blue-600 dark:text-blue-400 mt-0.5 text-sm">•</span>
+                    <span class="text-sm text-gray-600 dark:text-gray-300">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech) => (
+                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-md">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            
+            <div class="flex space-x-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center space-x-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              )}
+              
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center space-x-2 px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  <span>Demo</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
