@@ -1,37 +1,37 @@
 ---
 const publications = [
   {
-    title: "Advanced modeling and simulation of marine structures under environmental loading",
-    journal: "Ocean Engineering",
-    year: "2024",
-    doi: "S0029801824033882",
-    url: "https://www.sciencedirect.com/science/article/pii/S0029801824033882",
-    abstract: "This study presents advanced methodologies for modeling and simulation of marine structures under complex environmental loads.",
-    impact: "Q1",
-    citations: 12,
-    coAuthors: ["Dr. María González", "Prof. Antonio Martín"]
-  },
-  {
-    title: "Fatigue analysis of offshore structures using machine learning approaches",
-    journal: "Reliability Engineering & System Safety",
+    title: "New analysis in the preliminary design for LNG and LPG ships",
+    journal: "Marine Structures",
     year: "2025",
-    doi: "S0951833925000863",
-    url: "https://www.sciencedirect.com/science/article/abs/pii/S0951833925000863",
-    abstract: "Application of machine learning techniques for fatigue analysis in offshore structures, improving prediction accuracy.",
-    impact: "Q1",
-    citations: 8,
-    coAuthors: ["Dr. Elena Rodríguez", "Prof. Carlos Fernández"]
+    doi: "10.1016/j.marstruc.2025.103863",
+    url: "https://doi.org/10.1016/j.marstruc.2025.103863",
+    authors: "Mariano Marcos-Pérez, Javier Jiménez de la Jara, Daniel Precioso, Aurelio Muñoz, M. Victoria Redondo-Neble, David Gómez-Ullate",
+    abstract: "In recent years, the production of LNG and LPG ships has increased, driven by the increasing demand for natural and petroleum gases. To meet this demand, ship designs must be optimized at all stages, requiring designers to have advanced, efficient and accurate design tools. This study presents new statistical and regression analyses of data extracted from the Hyundai Heavy Industries Shipbuilding Group catalogue which includes information on LNG and LPG ships built between 1979 and 2023. The database includes 145 LNG carriers and 322 LPG carriers, representing approximately 20% of the global gas carrier fleet. Simple and multiple regression analyses were used to estimate dependent variables and their correlation to other ship parameters. In addition, Machine Learning algorithms were trained and compared against these traditional methods. This study provides updated tools to support the preliminary design of LNG and LPG ships, enhancing the understanding and accuracy of early-stage design decisions.",
+    contribution: "Co-developed the ML baseline and regression comparisons; helped analyze dimensional ratios and trends used in preliminary design tools.",
+    isPeerReviewed: true
   },
   {
-    title: "Computer vision applications in structural health monitoring of marine infrastructure",
-    journal: "IEEE Transactions on Industrial Informatics",
+    title: "HADAD: Hexagonal A-Star with Differential Algorithm Designed for weather routing",
+    journal: "Ocean Engineering",
+    year: "2025",
+    doi: "10.1016/j.oceaneng.2024.120050",
+    url: "https://doi.org/10.1016/j.oceaneng.2024.120050",
+    authors: "Javier Jiménez de la Jara, Daniel Precioso, Louis Bu, M. Victoria Redondo-Neble, Robert Milson, Rafael Ballester-Ripoll, David Gómez-Ullate",
+    abstract: "We present HADAD (Hexagonal A-Star with Differential Algorithm Designed for weather routing), a novel optimization algorithm for weather routing. HADAD conducts a global exploration using an A⋆ search on a hexagonal grid with higher-order neighbors, enhancing directional flexibility and overcoming limitations of traditional graph searches that constrain vessel movements. It then refines the solution using a discrete Newton–Jacobi variational method, ensuring convergence to a locally optimal, smooth route in continuous space. To evaluate the effectiveness of HADAD, we developed a benchmark comprising 1,560 instances over a full year, varying in origin–destination pairs, vessel speeds and oceanographic conditions. Our results show that HADAD outperforms pure A⋆ graph search methods by an extra 4% savings with respect to the shortest-distance route, thanks to more flexible smoother trajectories obtained by gradient descent. In our seasonal study we observe that the savings distribution shows large seasonal variations (double savings on average in winter with respect to summer) and contains a significant number of outliers. Savings reach 27% in these cases of extreme weather events. Validation of the algorithm performed with synthetic vector fields has been conducted. In this setting, the algorithm has been adapted to handle fuel consumption optimization for Just-in-Time arrival. By integrating global search and local optimization, HADAD effectively balances computational efficiency with route optimality, offering a practical and adaptable solution for real-world weather routing applications.",
+    contribution: "First author—designed the hex-grid A* + FMS pipeline, implemented the optimizer, and built the year-long 1,560-instance benchmark & analysis.",
+    isPeerReviewed: true
+  },
+  {
+    title: "NeoCam: A hybrid edge-cloud platform for non-invasive real-time monitorization of preterm neonates in intensive care units",
+    journal: "IEEE Journal of Biomedical and Health Informatics",
     year: "2023",
-    doi: "10034792",
-    url: "https://ieeexplore.ieee.org/abstract/document/10034792",
-    abstract: "Development of computer vision systems for structural health monitoring in marine infrastructure using deep learning.",
-    impact: "Q1",
-    citations: 24,
-    coAuthors: ["Dr. Luis Pérez", "Dr. Ana Jiménez", "Prof. Roberto Silva"]
+    doi: "10.1109/JBHI.2023.3322078",
+    url: "https://pubmed.ncbi.nlm.nih.gov/37819832/",
+    authors: "Ángel Ruiz-Zafra, Daniel Precioso, Blas Salvador, Simón P. Lubián-López, Javier Jiménez, Isabel Benavente-Fernández, Janet Pigueiras, David Gómez-Ullate, Lionel C. Gontard",
+    abstract: "The number of babies born prematurely is rising every year... In this work we present NEOCAM, an open source platform conceived to be deployed in NICUs for the real-time non-invasive monitorization of preterm in incubators or beds using edge-computing devices... We show how information of preterm limb's activity, face emotion and breath rate can be measured continuously in real time by processing video with three AI-based models running in parallel and dedicated algorithms designed to be flexible and robust.",
+    contribution: "Co-developed AI/computer-vision components and platform integration; contributed to trial deployment and documentation.",
+    isPeerReviewed: true
   }
 ];
 ---
@@ -40,191 +40,69 @@ const publications = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-        Scientific Publications
+        Publications
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-        High-impact research in ocean engineering, machine learning and computer vision
+        Peer-reviewed research in ocean engineering, AI, and computer vision
       </p>
     </div>
     
-    <!-- Publications Stats -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-      <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-xl">
-        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">3</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">Publications</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">In Q1 journals</div>
-      </div>
-      
-      <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 rounded-xl">
-        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">44</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">Citations</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">Total acumulado</div>
-      </div>
-      
-      <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 rounded-xl">
-        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">100%</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">Impacto Q1</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">Todas las revistas</div>
-      </div>
-    </div>
-    
     <!-- Publications List -->
-    <div class="space-y-8">
+    <div class="space-y-12">
       {publications.map((paper, index) => (
-        <div class="bg-gradient-to-r from-slate-50 to-blue-50 dark:from-gray-700 dark:to-blue-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-300">
-          <div class="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
+        <div class="bg-gradient-to-r from-slate-50 to-blue-50 dark:from-gray-700 dark:to-blue-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-600">
+          
+          <!-- Header -->
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">
+              {paper.title}
+            </h3>
             
-            <!-- Publication Number -->
-            <div class="flex-shrink-0 mb-4 lg:mb-0">
-              <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
-                {String(index + 1).padStart(2, '0')}
-              </div>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-4">
+              {paper.doi && (
+                <a href={paper.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                  DOI: {paper.doi}
+                </a>
+              )}
+              {paper.doi && <span>•</span>}
+              <span class="font-medium text-blue-600 dark:text-blue-400">{paper.journal}</span>
+              <span>•</span>
+              <span>{paper.year}</span>
+              {paper.isPeerReviewed && (
+                <>
+                  <span>•</span>
+                  <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
+                    Peer-reviewed
+                  </span>
+                </>
+              )}
             </div>
             
-            <!-- Publication Content -->
-            <div class="flex-grow">
-              <div class="mb-4">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
-                  {paper.title}
-                </h3>
-                
-                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-3">
-                  <span class="font-medium text-blue-600 dark:text-blue-400">{paper.journal}</span>
-                  <span>•</span>
-                  <span>{paper.year}</span>
-                  <span>•</span>
-                  <div class="flex items-center space-x-2">
-                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
-                      {paper.impact}
-                    </span>
-                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
-                      {paper.citations} citations
-                    </span>
-                  </div>
-                </div>
-                
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  {paper.abstract}
-                </p>
-                
-                <div class="mb-4">
-                  <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Co-authors: </span>
-                  <span class="text-sm text-gray-600 dark:text-gray-300">
-                    {paper.coAuthors.join(", ")}
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Actions -->
-              <div class="flex flex-wrap gap-3">
-                <a
-                  href={paper.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                  </svg>
-                  <span>Read Paper</span>
-                </a>
-                
-                <button 
-                  class="inline-flex items-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm font-medium"
-                  onclick="copyDOI('{paper.doi}')"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                  </svg>
-                  <span>Copy DOI</span>
-                </button>
-                
-                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-sm font-medium">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                  <span>Peer Reviewed</span>
-                </div>
-              </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              <strong>Authors:</strong> {paper.authors}
+            </p>
+          </div>
+          
+          <!-- Abstract -->
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Official abstract (verbatim):</h4>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500">
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm break-words">
+                "{paper.abstract}"
+              </p>
             </div>
           </div>
+          
+          <!-- Contribution -->
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">My contribution:</h4>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {paper.contribution}
+            </p>
+          </div>
+          
         </div>
       ))}
     </div>
-    
-    <!-- Research Areas -->
-    <div class="mt-16">
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
-        Research Areas
-      </h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-xl">
-          <div class="text-4xl mb-4">🌊</div>
-          <h4 class="font-bold text-gray-900 dark:text-white mb-2">Ingeniería Oceánica</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Modelado y análisis de estructuras marinas</p>
-        </div>
-        
-        <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 rounded-xl">
-          <div class="text-4xl mb-4">🤖</div>
-          <h4 class="font-bold text-gray-900 dark:text-white mb-2">Machine Learning</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">AI Applications in Engineering</p>
-        </div>
-        
-        <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 rounded-xl">
-          <div class="text-4xl mb-4">👁️</div>
-          <h4 class="font-bold text-gray-900 dark:text-white mb-2">Computer Vision</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Monitoreo y análisis visual</p>
-        </div>
-        
-        <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-orange-800 rounded-xl">
-          <div class="text-4xl mb-4">📊</div>
-          <h4 class="font-bold text-gray-900 dark:text-white mb-2">Análisis de Datos</h4>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Modelado predictivo y estadístico</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Call to Action -->
-    <div class="mt-16 text-center">
-      <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900 rounded-2xl p-8">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-          ¿Interesado en colaborar en investigación?
-        </h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
-          Always open to academic collaborations and innovative research projects
-        </p>
-        <a 
-          href="#contact" 
-          class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          <span>Colaborar</span>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
-
-<script>
-  function copyDOI(doi) {
-    navigator.clipboard.writeText(doi).then(function() {
-      // Create a temporary notification
-      const notification = document.createElement('div');
-      notification.textContent = 'DOI copiado al portapapeles';
-      notification.className = 'fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-opacity';
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => {
-          document.body.removeChild(notification);
-        }, 300);
-      }, 2000);
-    }, function(err) {
-      console.error('Could not copy DOI: ', err);
-    });
-  }
-</script>
