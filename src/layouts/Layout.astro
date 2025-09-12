@@ -35,22 +35,6 @@ import '../styles/global.css';
 		<slot />
 		
 		<script>
-			// Dark mode toggle functionality
-			const darkModeToggle = document.querySelector('#dark-mode-toggle');
-			const html = document.documentElement;
-
-			const isDarkMode = localStorage.theme === 'dark' || 
-				(!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-			if (isDarkMode) {
-				html.classList.add('dark');
-			}
-
-			darkModeToggle?.addEventListener('click', () => {
-				html.classList.toggle('dark');
-				localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-			});
-
 			// Smooth scrolling for navigation links
 			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 				anchor.addEventListener('click', function (e) {

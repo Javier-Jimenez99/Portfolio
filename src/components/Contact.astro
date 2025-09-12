@@ -27,13 +27,13 @@ import { Mail, Linkedin, Github } from 'lucide-astro';
         <div class="space-y-4">
           <!-- Email -->
           <a 
-            href="mailto:javierjimenezjara@gmail.com" 
+            href="mailto:javijj99@gmail.com" 
             class="flex items-center space-x-4 p-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group w-full"
           >
             <Mail class="w-6 h-6 group-hover:scale-110 transition-transform flex-shrink-0" />
             <div>
               <div class="font-semibold text-lg">Email</div>
-              <div class="text-sm opacity-90">javierjimenezjara@gmail.com</div>
+              <div class="text-sm opacity-90">javijj99@gmail.com</div>
             </div>
           </a>
           
@@ -158,12 +158,12 @@ import { Mail, Linkedin, Github } from 'lucide-astro';
     const message = formData.get('message');
     
     // Create mailto link with form data
-    const mailtoLink = `mailto:javierjimenezjara@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+    const mailtoLink = `mailto:javijj99@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
     
     // Open email client
     window.location.href = mailtoLink;
     
     // Show success message
-    alert('Opening your email client... If it doesn\'t work, please email me directly at javierjimenezjara@gmail.com');
+    alert('Opening your email client... If it doesn\'t work, please email me directly at javijj99@gmail.com');
   });
 </script>
