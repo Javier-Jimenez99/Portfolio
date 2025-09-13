@@ -29,6 +29,16 @@ import '../styles/global.css';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		
+		<!-- Script de inicialización de dark mode - debe ejecutarse inline para evitar FOUC -->
+		<script is:inline>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			document.documentElement.classList.toggle(
+			  "dark",
+			  localStorage.theme === "dark" ||
+				(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			);
+		</script>
+		
 		<title>{title}</title>
 	</head>
 	<body class="font-sans bg-slate-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -66,6 +76,50 @@ import '../styles/global.css';
 			// Observe all sections
 			document.querySelectorAll('section').forEach(section => {
 				observer.observe(section);
+			});
+
+			// Dark mode toggle - Handler principal (garantizado para producción)
+			document.addEventListener('DOMContentLoaded', () => {
+				const themeToggle = document.getElementById('theme-toggle');
+				if (themeToggle) {
+					console.log('✅ Theme toggle encontrado en Layout');
+					themeToggle.addEventListener('click', () => {
+						const isDark = document.documentElement.classList.contains('dark');
+						console.log('🌓 Toggling theme. Current isDark:', isDark);
+						
+						if (isDark) {
+							document.documentElement.classList.remove('dark');
+							localStorage.theme = 'light';
+							console.log('☀️ Switched to LIGHT mode');
+						} else {
+							document.documentElement.classList.add('dark');
+							localStorage.theme = 'dark';
+							console.log('🌙 Switched to DARK mode');
+						}
+						
+						console.log('📝 Classes after toggle:', Array.from(document.documentElement.classList));
+					});
+				} else {
+					console.error('❌ Theme toggle button NOT found!');
+				}
+
+				// Mobile menu toggle - Backup handler
+				const mobileMenuButton = document.getElementById('mobile-menu-button');
+				const mobileMenu = document.getElementById('mobile-menu');
+				
+				if (mobileMenuButton && mobileMenu) {
+					mobileMenuButton.addEventListener('click', () => {
+						mobileMenu.classList.toggle('hidden');
+					});
+					
+					// Close mobile menu when clicking on links
+					const mobileLinks = document.querySelectorAll('.mobile-link');
+					mobileLinks.forEach(link => {
+						link.addEventListener('click', () => {
+							mobileMenu.classList.add('hidden');
+						});
+					});
+				}
 			});
 		</script>
 

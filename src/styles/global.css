@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* ===== CONFIGURACIÓN TAILWIND V4 ===== */
+/* Dark mode usando clases - Sintaxis oficial Tailwind v4 */
+@variant dark (.dark &);
+
 /* Animaciones personalizadas */
 @keyframes fadeInUp {
   0% {

@@ -32,13 +32,13 @@ import { Moon, Sun, Menu } from 'lucide-astro';
       </div>
       
       <div class="flex items-center space-x-4">
-        <button id="dark-mode-toggle" class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+        <button id="theme-toggle" class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
           <Moon class="w-5 h-5 dark:hidden" />
           <Sun class="w-5 h-5 hidden dark:block" />
         </button>
         
         <div class="md:hidden">
-          <button type="button" class="mobile-menu-button p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <button type="button" id="mobile-menu-button" class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
             <Menu class="w-6 h-6" />
           </button>
         </div>
@@ -47,68 +47,23 @@ import { Moon, Sun, Menu } from 'lucide-astro';
   </div>
   
   <!-- Mobile menu -->
-  <div class="mobile-menu hidden md:hidden">
+  <div id="mobile-menu" class="hidden md:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-      <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+      <a href="#about" class="mobile-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
         About
       </a>
-      <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+      <a href="#projects" class="mobile-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
         Projects
       </a>
-      <a href="#publications" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+      <a href="#publications" class="mobile-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
         Publications
       </a>
-      <a href="#awards" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+      <a href="#awards" class="mobile-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
         Awards
       </a>
-      <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+      <a href="#contact" class="mobile-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
         Contact
       </a>
     </div>
   </div>
 </nav>
-
-<script>
-  // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    mobileMenuButton?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const mobileLinks = mobileMenu?.querySelectorAll('a');
-    mobileLinks?.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-      });
-    });
-    
-    // Dark mode functionality
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    if (darkModeToggle) {
-      // Set initial theme
-      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-        localStorage.theme = 'dark';
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.theme = 'light';
-      }
-      
-      // Toggle functionality
-      darkModeToggle.addEventListener('click', () => {
-        const html = document.documentElement;
-        if (html.classList.contains('dark')) {
-          html.classList.remove('dark');
-          localStorage.theme = 'light';
-        } else {
-          html.classList.add('dark');
-          localStorage.theme = 'dark';
-        }
-      });
-    }
-  });
-</script>
