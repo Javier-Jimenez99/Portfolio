@@ -5,17 +5,17 @@ const projects = [
   {
     id: 1,
     title: "OwlBear LLM Chat — AI Game Master (MCP / multi-agent)",
-    goal: "Make a conversational Game Master that plans, retrieves lore, rolls checks, and narrates scenes for tabletop RPGs.",
-    approach: "Planner → Retriever → Tool-use → Judge loop using MCP tools and LangGraph style orchestration.",
+    goal: "Make a conversational Game Master that plans, retrieves lore, manages the tabletop (dices, tokens, fog), and narrates scenes for tabletop RPGs.",
+    approach: "Langgraph ReAct agent that uses MCP tools connected with the OwlBear API.",
     whatIBuilt: [
-      "Planning agent to decompose requests (scenes, checks, NPCs).",
-      "Tool agents for rules lookup and dice/skill checks; post-check narration.",
-      "Safety/consistency checks to avoid lore contradictions; simple eval prompts."
+      "React Agent to interact with the tabletop.",
+      "Chat to talk with the players to manage lore and actions.",
+      "MCP server on Gradio with custom tools for dice, tokens, fog of war, rules, lore retrieval, and scene narration.",
     ],
     techStack: "Python, LangGraph, MCP, Anthropic, Gradio, Hugging Face",
     github: "https://github.com/Agamador/OwlBear-llm-chat",
     demo: "https://huggingface.co/spaces/Agents-MCP-Hackathon/LLM-GameMaster-Agent",
-    icon: "🎲"
+    icon: "🏆"
   },
   {
     id: 2,
@@ -23,9 +23,9 @@ const projects = [
     goal: "Provide rules-correct answers and card/line analysis for MTG, with sourceable citations.",
     approach: "Domain index of r/mtgrules Q&A and card text; retrieval + constrained generation for rules; optional fine-tuning experiments for jargon.",
     whatIBuilt: [
-      "Data ingestion + normalization (cards, rulings, forum Q&A).",
-      "Retrieval pipeline with rules-first prompts; refusal modes for uncertain cases.",
-      "Simple grader prompts to spot hallucinations; route to 'show resources.'"
+      "Data ingestion + cleaning with SoTA techniques (cards, ruling PDFs, forum Q&A).",
+      "Retrieval pipeline with rules-first prompts (RAG-style).",
+      "Fine-tune models on custom MTG data for jargon and strategy with huge amounts of data."
     ],
     techStack: "Python, Hugging Face, vLLM, Pinecone, PyTorch",
     github: "https://github.com/Javier-Jimenez99/gatherer-sage",
@@ -35,16 +35,17 @@ const projects = [
   {
     id: 3,
     title: "JokerNet — Gameplay automation & CV",
-    goal: "Explore computer-vision + policy loops for gameplay automation in selected titles.",
-    approach: "Screen capture → detection/classification → action planner; offline evaluation on recorded sessions.",
+    goal: "Explore computer-vision + LLM agents for gameplay automation in Balatro rogue like.",
+    approach: "Screen capture → detection/classification → action planner → action executor",
     whatIBuilt: [
+      "Docker environment to run the game and interact with it, in a secure way.",
       "Feature extractors and heuristics for state; simple rule-policies for actions.",
-      "Replay evaluator to compare seeds/policies; logging to iterate faster."
+      "Complex LangGraph agent to plan actions from state, with tool-use for multimodal LLMs.",
     ],
     techStack: "Python, LangChain, LangGraph, OpenAI, Streamlit, Docker",
     github: "https://github.com/Javier-Jimenez99/JokerNet",
     demo: null,
-    icon: "🎮"
+    icon: "🧙‍♂️"
   }
 ];
 
